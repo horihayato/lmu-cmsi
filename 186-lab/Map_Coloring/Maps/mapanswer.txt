@@ -1,0 +1,25 @@
+
+map1.txt
+Country 0 is Red
+Country 1 is Red
+Country 2 is Green
+Country 3 is Blue
+Country 4 is Blue
+Country 5 is Red
+Country 6 is Green
+Country 7 is Yellow
+Country 8 is Green
+Country 9 is Yellow
+Country 10 is Green
+
+
+map.txt
+The most perfect color scheme for this map is: 
+Country 0 is colored: Red
+Country 1 is colored: Green
+Country 2 is colored: Blue
+Country 3 is colored: Yellow
+Country 4 is colored: Red
+Country 5 is colored: Yellow
+Country 6 is colored: Blue
+Country 7 is colored: Red

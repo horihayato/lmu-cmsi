@@ -1,0 +1,115 @@
+body {
+    /* JD: 8 */
+  padding-top: 60px; /* 60px to make the container make room for the navigation bar */
+}
+
+
+.hide {
+	display: none; /* JD: 7 */
+}
+
+
+
+#header-region .navbar-inner, .brand, .nav > li > a{ /* JD: 9 */
+	color:black!important; /* JD: 9 */
+	background-color: #ecf0f1!important;
+	background-image: none!important;
+	border-color: #ecf0f1!important;
+}
+
+.navbar .nav {
+	float:right; /* JD: 9 */
+}
+
+.btn-top-nav {
+}
+
+
+
+
+#panel-region {
+	padding-bottom: 30px;
+}
+
+
+#contacts-region {
+	width: auto;
+	height:500px;
+	overflow-y: scroll;
+	overflow-x:hidden;
+}
+
+#contacts-region .table {
+	margin: 0 auto;
+	width: auto;
+	font-size: 25px;
+}
+
+.levelaccent {
+	margin: 3px;
+	padding: 10px;
+	color:#2980b9; /* JD: 9 ...etc. for the rest of this file */
+	background-color: #ecf0f1;
+	border: 1px solid #ecf0f1;
+    border-radius: 25px;
+}
+
+.table tbody td{
+	padding: 30px;
+}
+
+.table tbody td.functions {
+	border-top: 0px solid #dddddd;
+}
+
+.table tbody tr:hover td {
+	cursor: pointer;
+}
+
+
+
+
+.stats {
+	padding-left:50px;
+	padding-right:50px;
+	padding-bottom:60px;
+}
+
+
+.chardescrip {
+	font-size: 20px;
+	line-height: 1.4em;
+}
+
+
+
+.help {
+	padding: 30px 150px 0px 150px;
+}
+
+
+
+
+/* from http://css-tricks.com/examples/WebKitScrollbars/*/
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 20px #ecf0f1; 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #2980b9; 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(255,0,0,0.4); 
+}
+
+

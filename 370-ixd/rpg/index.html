@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>RPG Character Manager</title>
+  <link href="./public/css/bootstrap.css" rel="stylesheet">
+  <link href="./public/css/application.css" rel="stylesheet">
+  <link href="./public/css/jquery-ui-1.10.0.custom.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div id="header-region"></div>
+
+  <div id="main-region" class="container">
+    <p>Here is static content in the web page. You'll notice that it gets replaced by our app as soon as we start it.</p>
+  </div>
+
+  <div id="dialog-region"></div>
+
+  <script type="text/template" id="header-template">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="#contacts">RPG Character Manager</a>
+        <div class="nav-collapse collapse">
+          <ul class="nav"></ul>
+        </div>
+      </div>
+    </div>
+  </script>
+
+  <script type="text/template" id="header-link">
+    <a href="#<%- url %>"><%- name %></a>
+  </script>
+
+  <script type="text/template" id="contact-list">
+    <thead>
+      <tr>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </script>
+
+  <script type="text/template" id="contact-list-none"> <!-- JD: 6 -->
+    <td colspan="3">No contacts to display.</td>
+  </script>
+
+  <script type="text/template" id="contact-list-item">
+    <td class = "title"><%- name %>, the <%- classType %>
+      <span class = "levelaccent"> <%- level %> </span>
+    </td>
+    <td class = "functions">
+      <a href="#contacts/<%- id %>" class="hide btn btn-small js-show">
+        <i class="icon-eye-open"></i>
+        Show Stats
+      </a>
+      <a href="#contacts/<%- id %>/edit" class="hide btn btn-small js-edit">
+        <i class="icon-pencil"></i>
+        Edit
+      </a>
+      <button class="hide btn btn-small js-delete">
+        <i class="icon-remove"></i>
+        Delete
+      </button>
+    </td>
+  </script>
+
+  <script type="text/template" id="missing-contact-view">
+    <div class="alert alert-error">This character doesnt exist !</div>
+  </script>
+
+  <script type="text/template" id="contact-view">
+    <h1> <%- name %>,   the   <%- classType %> </h1> <br><br>
+      <div class = "chardescrip">Level: <span class = "levelaccent"> <%- level %> </span> <br><br>
+      Gender: <%- gender %> <br>
+      Money: <%- money %> </div>
+  </script>
+
+  <script type="text/template" id="loading-view">
+    <div id="spinner"></div>
+  </script>
+
+  <script type="text/template" id="contact-form">
+    <form>
+      <div class="control-group">
+        <label for="contact-name" class="control-label">Name:</label>
+        <input id="contact-name" name="name" type="text" value="<%- name %>"/>
+      </div>
+      <div class="control-group">
+        <label for="contact-classType" class="control-label">Class:</label>
+        <input id="contact-classType" name="classType" type="text" value="<%- classType %>"/>
+      </div>
+      <div class="control-group">
+        <label for="contact-level" class="control-label">Level:</label>
+        <input id="contact-level" name="level" type="text" value="<%- level %>"/>
+      </div>
+      <div class="control-group">
+        <label for="contact-gender" class="control-label">Gender:</label>
+        <!-- JD: 2 -->
+        <input type="radio" class="btn btn-default" name="gender" value="MALE">  Male<br>
+        <input type="radio" class="btn btn-default" name="gender" value="FEMALE">  Female
+      </div>
+      <div class="control-group">
+        <label for="contact-money" class="control-label">Money:</label>
+        <input id="contact-money" name="money" type="text" value="<%- money %>"/>
+      </div>
+      <button class="btn js-submit">Save</button>
+    </form>
+  </script>
+
+  <script type="text/template" id="item-popover">
+    <h1> <span class = "levelaccent"><%- level %></span> <%- slot %></h1><br><br>
+      <div class="stats">Absorption: <%- absorption %> <br>
+      Attack Speed: <%- atkspeed %> <br>
+      Block Chance: <%- blockchance %> <br>
+      Crit Chance: <%- critchance %> <br>
+      Defense: <%- defense %> <br>
+      Max Damage: <%- maxdamage %> <br>
+      Min Damage: <%- mindamage %> <br></div>
+    </script>
+
+    <script type="text/template" id="contact-list-layout">
+      <div id="panel-region"></div>
+      <div id="contacts-region"></div>
+    </script>
+
+    <script type="text/template" id="contact-list-panel">
+    <div class="btn-top-nav">
+      <button class="btn btn-success js-new">Create Character</button>
+      <button class="btn btn-info js-randomize">Generate Random Character</button>
+      <button class="btn btn-info js-item">Generate Random Item</button> 
+      </div>
+      <!--<form id="filter-form" class="form-search form-inline pull-right">
+      <div class="input-append">
+        <input type="text" class="span2 search-query js-filter-criterion">
+        <button type="submit" class="btn">Filter contacts</button>
+      </div>
+    </form>-->
+  </script>
+
+  <script type="text/template" id="about-message">
+    <h1>Here are a few tips to get you started!</h1>
+
+    <div class="help"><p> To <strong>create a new character</strong>, click the "Create Character" button below the header bar. You can also <strong>generate a random character</strong> by clicking the "Generate Random Character" button. If you don`t like the generated stats, X out of the window and click the button again. If your character does not immediately show up within the list, try refershing the page. To get a feel for the in-game items, you can <strong>"Generate Random Item"</strong>.<br> <br>
+
+      To <strong>edit a character</strong>, click on their respective table row and click "Edit".<strong>"Show Stats"</strong> will redirect you to a page with more detailed information on your selected character. A character`s level is always indicated by the number after their name.<br> <br>
+
+      To <strong>delete a character</strong>, click on their table row and click delete through to the red confirmation button.</p> </div>
+    </script>
+
+
+    <script src="./vendor/jquery.js"></script>
+    <script src="./vendor/jquery-ui-1.10.3.js"></script>
+    <script src="./vendor/json2.js"></script>
+    <script src="./vendor/underscore.js"></script>
+    <script src="./vendor/backbone.js"></script>
+    <script src="./vendor/backbone.picky.js"></script>
+    <script src="./vendor/backbone.syphon.js"></script>
+    <script src="./vendor/backbone.localstorage.js"></script>
+    <script src="./vendor/backbone.marionette.js"></script>
+    <script src="./vendor/spin.js"></script>
+    <script src="./vendor/spin.jquery.js"></script>
+
+    <script src="./config/marionette/regions/dialog.js"></script>
+    <script src="./apps/main.js"></script>
+    <script src="./apps/shared/filteredCollection.js"></script>
+    <script src="./apps/models/header.js"></script>
+    <script src="./apps/models/contact.js"></script>
+    <script src="./apps/shared/views.js"></script>
+
+    <script src="./apps/routes/contacts_app.js"></script> <!-- JD: 6 -->
+    <script src="./apps/vc/contacts/shared/views.js"></script>
+    <script src="./apps/vc/contacts/list/list_view.js"></script>
+    <script src="./apps/vc/contacts/list/list_controller.js"></script>
+    <script src="./apps/vc/contacts/show/show_view.js"></script>
+    <script src="./apps/vc/contacts/show/show_controller.js"></script>
+    <script src="./apps/vc/contacts/edit/edit_view.js"></script>
+    <script src="./apps/vc/contacts/edit/edit_controller.js"></script>
+    <script src="./apps/vc/contacts/new/new_view.js"></script>
+    <script src="./apps/vc/contacts/display/display_view.js"></script>
+
+    <script src="./apps/routes/about_app.js"></script>
+    <script src="./apps/vc/about/show/show_view.js"></script>
+    <script src="./apps/vc/about/show/show_controller.js"></script>
+
+    <script src="./apps/routes/header_app.js"></script>
+    <script src="./apps/vc/header/list/list_view.js"></script>
+    <script src="./apps/vc/header/list/list_controller.js"></script>
+
+    <script type="text/javascript">
+      ContactManager.start(); // JD: 6
+    </script>
+  </body>
+  </html>

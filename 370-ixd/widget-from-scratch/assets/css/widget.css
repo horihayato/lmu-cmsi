@@ -1,0 +1,15 @@
+.multiSlide-large{
+	padding:0 0 0 0!important;
+	font-size: 25px!important;
+	text-align: center!important;
+	cursor:hand!important;
+	position: absolute;
+	height:100px;
+	width: 300px;
+	margin-left: 20px;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	z-index: 100;
+
+};
+

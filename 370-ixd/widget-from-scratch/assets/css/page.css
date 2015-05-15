@@ -1,0 +1,19 @@
+/* Drawing area properties. */
+body {
+	background-color: #95a5a6;
+}
+
+.container {
+	margin-left:50px; 
+	margin-top:50px;
+}
+
+#confirmed {
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	border-style: solid;
+    border-width: 5px;
+    margin-top:200px;
+    z-index: -200;
+}

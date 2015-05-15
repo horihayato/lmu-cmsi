@@ -1,0 +1,69 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="UTF-8" />
+
+        <title>Widget Demo</title>
+        <link rel="stylesheet" type="text/css" href="assets/css/widget.css"/>
+        <link rel="stylesheet" type="text/css" href="assets/css/page.css"/>
+        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css"/>
+
+        <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+        <script src="assets/js/widget.js"></script>
+
+    </head>
+    
+    <body>
+        <div class="container">
+
+            <h1>Demo</h1>
+            <h3>Drag the button horizontally to confirm the container below</h3> <br>
+            <br>
+            <br>
+
+            <div id = "myButton" class="btn multiSlide-large "></div>
+
+            <div id = "confirmed">Not confirmed...</div>
+
+        </div>
+    </body>
+
+    <script type="text/javascript">
+
+        var data = {
+            states: 
+                    {
+                        1: {
+                            text: "Delete!", 
+                            buttonColor: "#3498db"
+                        },
+
+                        2: {
+                            text: "Are you sure?",
+                            buttonColor: "#8e44ad"
+                        },
+
+                        3: {
+                            text: "One more time...",
+                            buttonColor: "#e67e22"
+                        },
+
+                        4: {
+                            text: "Goodbye cruel world!",
+                            buttonColor: "#7f8c8d"
+                        }
+                    },
+
+            confirmed: "#confirmed"
+        }
+
+
+        $(document).ready (function(){
+            $("#myButton").multiSlide(data);
+        });
+
+    </script>
+
+</html>

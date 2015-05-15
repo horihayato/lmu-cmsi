@@ -1,0 +1,18 @@
+Programming Lab - Spring 2013
+=============================
+
+Card Game - Checks for the "legality" of a deck after shuffling.
+
+Changemaker - Implemented "Tuple" class as multidimensional array structure. Returns optimum coinage for lump sum given.
+
+Clock Simulation - Determines all times during a twelve-hour day at which the two hands of a clock form a given angle.
+
+Date Problems - Incomplete, examples of various usages of dates.
+
+Integration - Simulation of randomized and Riemann integration.
+
+Map Coloring - Determines if a map, given countries and colors, can be colored.
+
+Playground -  An arbitrary number of soccer balls are kicked, all at different speeds and directions. We wish to find out, via a discrete simulation of the system, whether a collision will ever take place, and, if so, where and when. 
+
+Ginormint - Incomplete, BigInteger class with math operations.

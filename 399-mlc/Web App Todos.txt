@@ -1,0 +1,55 @@
+implementation list for the finish line
+
+///////////////////////////////////////////////////////////
+
+- beautify
+	design list items
+	design metrics page like proper analytics page
+	make monitoring metric a table
+	make chart.js charts cooler
+
+- get build-able (mimic benm documentation on github)
+	generate larger timeline item pool
+	proper dependancies
+	seeder for mongo (make sure to run seeder in server.js)
+
+- timeline view
+	validate entry fields for none and right format (esp. date)
+	edit show for practice only and goal only attributes 
+	goal association dropdown w/ all goals listed
+	initial values on edit dropdowns
+	datepicker for dates
+	add info button hovers next to inputs (what is this input?)
+	goal uneditable (freeze) on completed==true
+		
+
+- metric view
+	add info button descriptions
+		how do interpret this data
+	add other fun charts & totals
+
+
+
+
+
+_____________________
+CMSI Thesis
+
+What is the minimum viable product?
+
+Now that we have an idea of what we are doing…
+
+1. Finishing design, front end and scaling to user base
+2. Original metrics combining machine learning (how), cognitive science (what) and rapid learning (why).
+
+integrate habit
+
+
+________
+Winter Break
+
+Revamp skill genie site to reflect release date
+tone down features, offerings and proposed updates.
+
+get the user to subscribe, but do not promise anything but a release date (May 2015)
+make it simple
