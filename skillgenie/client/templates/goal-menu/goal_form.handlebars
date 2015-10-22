@@ -1,0 +1,43 @@
+<form>
+
+
+
+            <div class="row">
+              <div class="input-field col s12">
+                <input value="{{headline}}" name="headline" id="goal-headline" type="text" class="validate" autofocus>
+                <label for="goal-headline">Goal Title</label>
+              </div>
+            </div>
+
+             <div class="row">
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <textarea name="description" id="goal-description" class="materialize-textarea" length="200">{{description}}</textarea>
+                    <label for="goal-description">Description</label>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+
+
+
+              <label for="goal-difficulty" class="control-label">Difficulty:</label>
+              <p class="range-field">
+                <input value="{{difficulty}}" id="goal-difficulty" name="difficulty" type="range" id="test5" min="0" max="50" />
+              </p>
+
+
+            <div class="row bottom-row">
+
+              <div class="success-container">  
+                <input type="checkbox" name="success" id="post-success" />
+                <label for="post-success" class="control-label">Success</label>
+              </div>
+
+
+              <button class="btn js-submit">Save</button>
+            </div>
+
+</form>

@@ -1,0 +1,25 @@
+<div class="metricsHead">
+	<h1>Global Metrics</h1>
+</div>
+
+<div class="metricSection">
+	<h5>A predictive model of success based on tasks by time & difficulty</h5>
+	<div class="chart" id='regressionChart'></div>
+	<p>Lets say you’d like to give a certain amount of time to a task, but don’t know how far towards the stars to shoot. There’s only so much time between you and your goals, this metric helps to ensure your success. <br><br>
+
+	In this multivariable analysis we take the entire history of all your time spent on tasks and leverage it against your own self-reported success. On the chart you'll see dots and a green line. These grey dots represent your successful tasks across all goals, charted by time spent and self-reported difficulty. We use a process called “linear regression by gradient descent” to find the common thread through the two charted variables, giving you a historically-backed, uniquely you, model by which to predict either.</p>
+</div>
+
+<div class="metricSection" id="wordcloud">
+	<h5>Word usage in descriptions most tied to task success</h5>
+	<div id='posWordCloud'></div>
+	<p>Blindly chasing after success is a sure-fire way to fail. This metric helps you to identify language that marks your success so you can understand what you are doing, when you are trying to do things right.<br><br>
+
+	This analysis is quite simple: we take your entire task history and leverage it against success and failure. By identifying which words reoccur in successful posts, through a "bag of words" approach to Naive Bayes "Sentiment Analysis", we are able to show you language that runs across all of them. This is especially useful mid-task, when you are not exactly sure what might lend to your failure or success.</p>
+</div>
+
+{{!-- <div class="metricSection">
+	<h5>Word usage in descriptions most tied to task failure</h5>
+	<div id='negWordCloud'></div>
+</div> --}}
+

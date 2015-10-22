@@ -1,0 +1,25 @@
+
+
+    <i class="mdi-maps-directions-bike circle"></i>
+      <span class="title">{{ headline }}</span>
+      <p>Created on {{ timestamp }} 
+      </p>
+      <div class="secondary-container">
+        <button class="secondary-content btn btn-small js-delete">
+          <i class="small mdi-content-content-cut"></i>
+        </button> 
+        <a href="#timeline/{{slug}}" class="secondary-content btn btn-small js-view-timeline">
+          <i class="small mdi-action-book"></i>
+        </a>
+        <a href="#metrics/{{slug}}" class="secondary-content btn btn-small js-view-metrics">
+          <i class="small mdi-action-trending-up"></i>
+        </a>
+        <a href="#goals/{{ _id }}" class="secondary-content btn btn-small js-show">
+          <i class="small mdi-av-web"></i>
+        </a>
+{{!--         <a href="#goals/{{ _id }}/edit" class="secondary-content btn btn-small js-edit">
+          <i class="small mdi-editor-mode-edit"></i>
+        </a> --}}
+
+      </div>
+            

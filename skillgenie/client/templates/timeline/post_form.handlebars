@@ -1,0 +1,55 @@
+<form>
+<div id='grad-outer'><div id='grad-inner'>
+
+
+            <div class="control-group with-learning">
+              <label for="post-date" class="control-label">Estimated Date of Completion</label>
+              <input id="post-doc" name="doc" type="date" class="datepicker" value="{{doc}}">
+
+              <a class="learning-btn btn-floating btn-small waves-effect waves-light red"><i class="tiny mdi-action-visibility"></i></a>
+
+            </div>
+
+
+
+            <div class="row">
+              <div class="input-field col s6">
+                <input value="{{goalAssoc}}" name="goalAssoc" id="post-goalAssoc" type="text" class="validate" autofocus>
+                <label for="post-goalAssoc">Parent Goal</label>
+              </div>
+              <div class="input-field col s6">
+                <input value="{{headline}}" name="headline" id="post-headline" type="text" class="validate">
+                <label for="post-headline">Post Title</label>
+              </div>
+            </div>
+
+             <div class="row">
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <textarea name="description" id="post-description" class="materialize-textarea" length="200">{{description}}</textarea>
+                    <label for="post-description">Description</label>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+
+
+
+              <label for="post-difficulty" class="control-label">Difficulty:</label>
+              <p class="range-field">
+                <input value="{{difficulty}}" id="post-difficulty" name="difficulty" type="range" id="test5" min="0" max="50" />
+              </p>
+
+
+            <div class="row bottom-row">
+              <div class="success-container">  
+                <input type="checkbox" name="success" id="post-success" />
+                <label for="post-success" class="control-label">Success</label>
+              </div>
+              <button class="btn js-submit">Save</button>
+            </div>
+
+</div></div>
+</form>
